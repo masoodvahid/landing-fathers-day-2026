@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Father's Day Sale — B.B. Simon® | 20%–50% Off</title>
+  <meta name="description" content="Celebrate Father's Day with B.B. Simon. Enjoy 20% to 50% off our iconic Swarovski crystal belts and accessories. The more you add, the more you save." />
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:title" content="Father's Day Sale — B.B. Simon® | 20%–50% Off" />
+  <meta property="og:description" content="The more you add, the more you save. 20%–50% off iconic crystal belts & accessories." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===========================================================
+       B.B. Simon — Father's Day Landing
+       Palette (edit these to match your exact brand hex codes)
+       =========================================================== */
+    :root {
+      --ink:        #0a0a0a;   /* near-black background        */
+      --ink-soft:   #141414;   /* raised panels                */
+      --paper:      #f7f5f2;   /* warm off-white text          */
+      --muted:      #9c968c;   /* secondary text               */
+      --gold:       #c9a227;   /* primary accent — brand gold  */
+      --gold-soft:  #e7cf86;   /* highlight / shimmer          */
+      --line:       rgba(201,162,39,0.22);
+
+      --maxw: 1120px;
+      --radius: 14px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .serif {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+    .gold { color: var(--gold); }
+
+    /* shimmering gold text used on the headline highlight */
+    .shimmer {
+      background: linear-gradient(100deg, var(--gold) 0%, var(--gold-soft) 35%, #fff7df 50%, var(--gold-soft) 65%, var(--gold) 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: shine 6s linear infinite;
+    }
+    @keyframes shine { to { background-position: 200% center; } }
+
+    /* ---------- Header ---------- */
+    header.site {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(10,10,10,0.72);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 600; letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .logo small { display:block; font-size: .5rem; letter-spacing:.35em; color: var(--muted); margin-top: -4px; }
+    .nav a.shop {
+      font-family: 'Inter', sans-serif; font-size: .72rem; letter-spacing: .22em;
+      text-transform: uppercase; color: var(--gold);
+      border: 1px solid var(--line); padding: 10px 18px; border-radius: 100px;
+      transition: all .25s ease;
+    }
+    .nav a.shop:hover { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+
+    /* ---------- Hero ---------- */
+    .hero { position: relative; text-align: center; padding: 96px 0 80px; }
+    .hero::before {
+      content:""; position:absolute; inset:0; z-index:-1;
+      background:
+        radial-gradient(60% 50% at 50% 0%, rgba(201,162,39,0.14), transparent 70%),
+        radial-gradient(40% 40% at 80% 90%, rgba(201,162,39,0.06), transparent 70%);
+    }
+    .eyebrow {
+      font-family:'Inter',sans-serif; font-size:.72rem; letter-spacing:.4em;
+      text-transform:uppercase; color: var(--muted); margin-bottom: 28px;
+    }
+    .hero h1 { font-size: clamp(2.6rem, 7vw, 5.2rem); line-height: 1.02; margin: 0 0 8px; }
+    .hero h1 em { font-style: italic; }
+    .hero .sub {
+      max-width: 520px; margin: 22px auto 0; color: var(--muted);
+      font-family:'Inter',sans-serif; font-weight:300; font-size: 1.02rem;
+    }
+    .cta-row { margin-top: 40px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+    .btn {
+      font-family:'Inter',sans-serif; font-size:.78rem; letter-spacing:.2em; text-transform:uppercase;
+      padding: 16px 34px; border-radius: 100px; cursor:pointer; transition: all .25s ease; border: 1px solid var(--gold);
+    }
+    .btn-primary { background: var(--gold); color: var(--ink); font-weight: 600; }
+    .btn-primary:hover { background: var(--gold-soft); transform: translateY(-2px); }
+    .btn-ghost { background: transparent; color: var(--paper); border-color: var(--line); }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ---------- Countdown ---------- */
+    .countdown { display:flex; gap: 22px; justify-content:center; margin-top: 54px; }
+    .cd-box { min-width: 74px; }
+    .cd-num { font-family:'Cormorant Garamond',serif; font-size: 2.6rem; color: var(--gold-soft); line-height:1; }
+    .cd-lbl { font-size:.6rem; letter-spacing:.25em; text-transform:uppercase; color: var(--muted); margin-top:6px; }
+
+    /* ---------- Discount tiers ---------- */
+    .section { padding: 88px 0; border-top: 1px solid var(--line); }
+    .section-head { text-align:center; margin-bottom: 56px; }
+    .section-head h2 { font-size: clamp(2rem, 4.5vw, 3rem); margin: 0 0 14px; }
+    .section-head p { color: var(--muted); font-family:'Inter',sans-serif; max-width: 540px; margin: 0 auto; }
+
+    .tiers { display:grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .tier {
+      position:relative; background: var(--ink-soft); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 36px 22px; text-align:center;
+      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+    }
+    .tier:hover { transform: translateY(-6px); border-color: var(--gold); box-shadow: 0 18px 40px -22px rgba(201,162,39,.5); }
+    .tier .pct { font-family:'Cormorant Garamond',serif; font-size: 3.2rem; line-height:1; color: var(--gold); }
+    .tier .pct span { font-size: 1.4rem; }
+    .tier .qty { margin-top: 12px; font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; color: var(--paper); }
+    .tier .note { margin-top:6px; font-size:.74rem; color: var(--muted); font-family:'Inter',sans-serif; }
+    .tier.best { border-color: var(--gold); background: linear-gradient(180deg, rgba(201,162,39,0.08), var(--ink-soft)); }
+    .tier .ribbon {
+      position:absolute; top:-11px; left:50%; transform:translateX(-50%);
+      background: var(--gold); color: var(--ink); font-size:.58rem; letter-spacing:.18em;
+      text-transform:uppercase; font-weight:600; padding:5px 14px; border-radius:100px; font-family:'Inter',sans-serif;
+      white-space: nowrap;
+    }
+
+    /* ---------- Promo bar / details ---------- */
+    .fineprint { text-align:center; margin-top: 40px; color: var(--muted); font-size:.82rem; font-family:'Inter',sans-serif; }
+    .code-pill {
+      display:inline-flex; align-items:center; gap:12px; margin-top: 18px;
+      border:1px dashed var(--gold); border-radius:100px; padding:12px 24px;
+    }
+    .code-pill b { color: var(--gold-soft); letter-spacing:.22em; font-family:'Inter',sans-serif; }
+
+    /* ---------- Brand strip ---------- */
+    .brand { text-align:center; }
+    .brand p { max-width: 620px; margin: 0 auto; color: var(--muted); font-family:'Inter',sans-serif; }
+    .features { display:grid; grid-template-columns: repeat(3,1fr); gap: 28px; margin-top: 56px; }
+    .feature { text-align:center; padding: 0 12px; }
+    .feature .ico { font-family:'Cormorant Garamond',serif; font-size: 1.8rem; color: var(--gold); }
+    .feature h3 { font-size: 1.25rem; margin: 12px 0 8px; }
+    .feature p { font-size: .9rem; }
+
+    /* ---------- Final CTA ---------- */
+    .final { text-align:center; }
+    .final h2 { font-size: clamp(2.2rem, 5vw, 3.4rem); margin:0 0 18px; }
+
+    /* ---------- Footer ---------- */
+    footer.site { border-top:1px solid var(--line); padding: 44px 0; text-align:center; color: var(--muted); font-family:'Inter',sans-serif; font-size:.8rem; }
+    footer .logo { font-size:1.1rem; color: var(--paper); margin-bottom: 14px; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 880px) {
+      .tiers { grid-template-columns: repeat(2, 1fr); }
+      .features { grid-template-columns: 1fr; gap: 36px; }
+    }
+    @media (max-width: 460px) {
+      .countdown { gap: 14px; }
+      .cd-box { min-width: 58px; }
+      .cd-num { font-size: 2rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .shimmer { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site">
+    <div class="wrap nav">
+      <!-- TODO: replace this wordmark with your logo image:
+           <img src="assets/logo.svg" alt="B.B. Simon" height="34"> -->
+      <a class="logo" href="#">B.B. Simon<small>online</small></a>
+      <a class="shop" href="#shop">Shop the Sale</a>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Father's Day Event · Limited Time</p>
+      <h1>
+        For the Dad Who<br /><em>Shines</em> <span class="shimmer">Brighter</span>
+      </h1>
+      <p class="sub">
+        Celebrate him with the iconic crystal craftsmanship of B.B. Simon.
+        Enjoy <strong class="gold">20%&ndash;50% off</strong> — the more you add, the more you save.
+      </p>
+
+      <div class="cta-row">
+        <a href="#shop" class="btn btn-primary">Shop the Sale</a>
+        <a href="#tiers" class="btn btn-ghost">See the Savings</a>
+      </div>
+
+      <!-- Countdown to end of sale -->
+      <div class="countdown" id="countdown" aria-label="Time remaining in sale">
+        <div class="cd-box"><div class="cd-num" id="cd-d">00</div><div class="cd-lbl">Days</div></div>
+        <div class="cd-box"><div class="cd-num" id="cd-h">00</div><div class="cd-lbl">Hours</div></div>
+        <div class="cd-box"><div class="cd-num" id="cd-m">00</div><div class="cd-lbl">Min</div></div>
+        <div class="cd-box"><div class="cd-num" id="cd-s">00</div><div class="cd-lbl">Sec</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DISCOUNT TIERS ===================== -->
+  <!-- =========================================================
+       EDIT THESE TIERS to match your exact discount-rule image.
+       The structure below is a "spend more, save more" ladder.
+       ========================================================= -->
+  <section class="section" id="tiers">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>The More You Gift, The More You Save</h2>
+        <p>Your discount grows with every piece you add to the cart. Mix belts, wallets &amp; accessories — it all counts.</p>
+      </div>
+
+      <div class="tiers">
+        <div class="tier">
+          <div class="pct">20<span>%</span></div>
+          <div class="qty">1 Item</div>
+          <div class="note">A timeless single statement</div>
+        </div>
+        <div class="tier">
+          <div class="pct">30<span>%</span></div>
+          <div class="qty">2 Items</div>
+          <div class="note">The classic pairing</div>
+        </div>
+        <div class="tier">
+          <div class="pct">40<span>%</span></div>
+          <div class="qty">3 Items</div>
+          <div class="note">A complete look</div>
+        </div>
+        <div class="tier best">
+          <div class="ribbon">Best Value</div>
+          <div class="pct">50<span>%</span></div>
+          <div class="qty">4+ Items</div>
+          <div class="note">The full B.B. Simon experience</div>
+        </div>
+      </div>
+
+      <div class="fineprint">
+        <div class="code-pill">Use code <b>DAD2026</b> at checkout</div>
+        <p>Discount applied automatically at checkout. Valid through Father's Day. Cannot be combined with other offers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BRAND STRIP ===================== -->
+  <section class="section brand">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Crafted to Be Remembered</h2>
+      </div>
+      <p>
+        Every B.B. Simon piece is hand-set with genuine Swarovski crystals and finished with fine Italian
+        leatherwork — a gift that carries the weight of true luxury.
+      </p>
+
+      <div class="features">
+        <div class="feature">
+          <div class="ico">✦</div>
+          <h3>Genuine Crystals</h3>
+          <p>Hand-set Swarovski crystals on every signature piece.</p>
+        </div>
+        <div class="feature">
+          <div class="ico">❖</div>
+          <h3>Italian Craftsmanship</h3>
+          <p>Premium leather and engraved buckles, made to last.</p>
+        </div>
+        <div class="feature">
+          <div class="ico">✧</div>
+          <h3>Gift-Ready</h3>
+          <p>Arrives boxed and ready to give — no wrapping required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FINAL CTA ===================== -->
+  <section class="section final" id="shop">
+    <div class="wrap">
+      <h2>Make This Father's Day <span class="shimmer">Unforgettable</span></h2>
+      <p class="sub" style="margin: 0 auto 34px;">Up to 50% off ends soon. Give him something that shines.</p>
+      <a href="#" class="btn btn-primary" id="shopBtn">Shop Now at BBSimonOnline.com</a>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site">
+    <div class="wrap">
+      <div class="logo serif">B.B. Simon®</div>
+      <p>&copy; <span id="year"></span> B.B. Simon Online. All rights reserved. · Father's Day offer valid for a limited time only.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* ----- Countdown -----
+       Set this to your sale end date/time.
+       Default: end of US Father's Day 2026 (Sun Jun 21, 2026, 23:59:59). */
+    const SALE_END = new Date('2026-06-21T23:59:59');
+
+    const pad = (n) => String(n).padStart(2, '0');
+    function tick() {
+      const diff = SALE_END - new Date();
+      if (diff <= 0) {
+        ['cd-d','cd-h','cd-m','cd-s'].forEach(id => document.getElementById(id).textContent = '00');
+        return;
+      }
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      document.getElementById('cd-d').textContent = pad(d);
+      document.getElementById('cd-h').textContent = pad(h);
+      document.getElementById('cd-m').textContent = pad(m);
+      document.getElementById('cd-s').textContent = pad(s);
+    }
+    tick();
+    setInterval(tick, 1000);
+
+    // Point the main shop button at your store (update URL as needed)
+    document.getElementById('shopBtn').setAttribute('href', 'https://bbsimononline.com');
+  </script>
+</body>
+</html>
